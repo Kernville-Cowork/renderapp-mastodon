@@ -41,6 +41,7 @@ services:
   - type: redis
     name: redis-private
     ipAllowList: []
+    plan: free
 
 databases:
   - name: mastodon_db
