@@ -1,9 +1,14 @@
 FROM tootsuite/mastodon:v3.5.3
 
+# add extra packages 
+USER root
+RUN gem install foreman
+
 # copy over our extra stuff
 COPY --chown=mastodon:mastodon Procfile.worker /opt/mastodon
+
 
 # reset
 USER mastodon
 ENV RAILS_LOG_TO_STDOUT="enabled"
-ENTRYPOINT ["foreman", "start", "-f", "Procfile.worker"]
+CMD ["foreman", "start", "-f", "Procfile.worker"]
