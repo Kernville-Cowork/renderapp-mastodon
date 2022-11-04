@@ -17,8 +17,8 @@ services:
           property: connectionString
       - key: REDIS_URL
         fromService:
-          name: redis
-          type: pserv
+          name: redis-private
+          type: redis
           property: connectionString
 
   - type: worker
@@ -34,17 +34,13 @@ services:
           property: connectionString
       - key: REDIS_URL
         fromService:
-          name: redis
-          type: pserv
+          name: redis-private
+          type: redis
           property: connectionString
 
-  - type: pserv
-    name: redis
-    env: docker
-    repo: https://github.com/render-examples/redis.git
-    disk:
-      name: redis-data
-      mountPath: /var/lib/redis
+  - type: redis
+    name: redis-private
+    ipAllowList: []
 
 databases:
   - name: mastodon_db
