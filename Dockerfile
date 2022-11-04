@@ -22,4 +22,4 @@ RUN mkdir -p /opt/mastodon/cache/nginx && chown -R mastodon:mastodon /opt/mastod
 # reset
 USER mastodon
 ENV RAILS_LOG_TO_STDOUT="enabled"
-CMD [ "foreman", "start", "-f", "Procfile.web"]
+CMD [ "/opt/ruby/bin/foreman", "start", "-f", "Procfile.web"]

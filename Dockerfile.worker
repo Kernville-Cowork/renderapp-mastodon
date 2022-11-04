@@ -11,4 +11,4 @@ COPY --chown=mastodon:mastodon Procfile.worker /opt/mastodon
 # reset
 USER mastodon
 ENV RAILS_LOG_TO_STDOUT="enabled"
-CMD ["foreman", "start", "-f", "Procfile.worker"]
+CMD ["/opt/ruby/bin/foreman", "start", "-f", "Procfile.worker"]
