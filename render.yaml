@@ -2,6 +2,7 @@ services:
   - type: web
     name: frontend
     env: docker
+    plan: free
     scaling:
       minInstances: 1
       maxInstances: 3
@@ -46,6 +47,7 @@ services:
 databases:
   - name: mastodon_db
     databaseName: mastodon
+    plan: free
 
 envVarGroups:
   - name: rails
