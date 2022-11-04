@@ -1,4 +1,4 @@
-FROM tootsuite/mastodon:v3.4.4
+FROM tootsuite/mastodon:v3.5.3
 
 # add extra packages 
 USER root
