@@ -1,3 +1,1 @@
-web: bundle exec puma -C config/puma.rb
-streaming: node ./streaming
-nginx: nginx -c /opt/mastodon/nginx.conf
+web: BIND=0.0.0.0 bundle exec puma -C config/puma.rb
