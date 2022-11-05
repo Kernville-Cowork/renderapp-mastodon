@@ -1,1 +1,1 @@
-web: BIND=0.0.0.0 bundle exec puma -C config/puma.rb
+web: BIND=0.0.0.0 bin/render-build.sh && bundle exec puma -C config/puma.rb
