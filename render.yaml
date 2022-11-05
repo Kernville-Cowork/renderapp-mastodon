@@ -3,6 +3,7 @@ services:
     name: frontend
     env: docker
     plan: free
+    buildCommand: "./bin/render-build.sh"
     scaling:
       minInstances: 1
       maxInstances: 3
