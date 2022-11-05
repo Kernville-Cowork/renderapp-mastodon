@@ -19,6 +19,9 @@ RUN rm -f /etc/nginx/sites-available/default /etc/nginx/modules-available/* && \
 COPY --chown=mastodon:mastodon Procfile.* nginx*.conf /opt/mastodon
 RUN mkdir -p /opt/mastodon/cache/nginx && chown -R mastodon:mastodon /opt/mastodon/cache
 
+
+COPY --chown=mastodon:mastodon bin/render-build.sh /opt/mastodon/bin
+
 # reset
 USER mastodon
 ENV RAILS_LOG_TO_STDOUT="enabled"
