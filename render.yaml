@@ -2,7 +2,7 @@ services:
   - type: web
     name: frontend
     env: docker
-    plan: free
+    plan: standard
     # buildCommand: "./bin/render-build.sh"
     scaling:
       minInstances: 1
@@ -26,6 +26,7 @@ services:
   - type: worker
     name: sidekiq
     env: docker
+    plan: standard
     numInstances: 1
     dockerfilePath: ./Dockerfile.worker
     envVars:
