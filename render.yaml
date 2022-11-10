@@ -4,6 +4,8 @@ services:
     env: docker
     plan: standard
     # buildCommand: "./bin/render-build.sh"
+    domains:
+      - kernvillecowork.social
     scaling:
       minInstances: 1
       maxInstances: 3
