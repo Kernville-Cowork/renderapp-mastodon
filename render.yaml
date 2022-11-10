@@ -53,11 +53,29 @@ databases:
 envVarGroups:
   - name: rails
     envVars:
-      - key: OTP_SECRET
-        generateValue: true
+      - key: LOCAL_DOMAIN
+        value: kernvillecowork.social
+      - key: SINGLE_USER_MODE
+        value: "false"
       - key: SECRET_KEY_BASE
-        generateValue: true
-      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: OTP_SECRET
         sync: false
       - key: VAPID_PRIVATE_KEY
         sync: false
+      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: SMTP_SERVER
+        value: smtp.sendgrid.net
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_LOGIN
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_AUTH_METHOD
+        value: plain
+      - key: SMTP_OPENSSL_VERIFY_MODE
+        value: peer
+      - key: SMTP_FROM_ADDRESS
+        value: 'Mastodon <notifications@kernvillecowork.social>'
